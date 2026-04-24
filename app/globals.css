@@ -1,0 +1,141 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #f7f9f8;
+  --foreground: #0d277c;
+  --card: #ffffff;
+  --card-foreground: #0d277c;
+  --popover: #ffffff;
+  --popover-foreground: #0d277c;
+  --primary: #00a0e2;
+  --primary-foreground: #f7f9f8;
+  --secondary: #0d277c;
+  --secondary-foreground: #f7f9f8;
+  --muted: #f7f9f8;
+  --muted-foreground: #525252;
+  --accent: #ad4422;
+  --accent-foreground: #f7f9f8;
+  --destructive: #e7000b;
+  --destructive-foreground: #f7f9f8;
+  --border: #e0e0e0;
+  --input: #ffffff;
+  --ring: #00a0e2;
+  --chart-1: #00a0e2;
+  --chart-2: #0d277c;
+  --chart-3: #ad4422;
+  --chart-4: #00a0e2;
+  --chart-5: #ad4422;
+  --radius: 1rem;
+  --sidebar: #f7f9f8;
+  --sidebar-foreground: #0d277c;
+  --sidebar-primary: #00a0e2;
+  --sidebar-primary-foreground: #f7f9f8;
+  --sidebar-accent: #f7f9f8;
+  --sidebar-accent-foreground: #0d277c;
+  --sidebar-border: #e0e0e0;
+  --sidebar-ring: #00a0e2;
+}
+
+.dark {
+  --background: #0d277c;
+  --foreground: #f7f9f8;
+  --card: #0a2566;
+  --card-foreground: #f7f9f8;
+  --popover: #0d277c;
+  --popover-foreground: #f7f9f8;
+  --primary: #00a0e2;
+  --primary-foreground: #0d277c;
+  --secondary: #f7f9f8;
+  --secondary-foreground: #0d277c;
+  --muted: #0a2566;
+  --muted-foreground: #b0b0b0;
+  --accent: #ad4422;
+  --accent-foreground: #f7f9f8;
+  --destructive: #ff6467;
+  --destructive-foreground: #0d277c;
+  --border: #1a3a9c;
+  --input: #0a2566;
+  --ring: #00a0e2;
+  --chart-1: #00a0e2;
+  --chart-2: #f7f9f8;
+  --chart-3: #ad4422;
+  --chart-4: #00a0e2;
+  --chart-5: #ad4422;
+  --sidebar: #0d277c;
+  --sidebar-foreground: #f7f9f8;
+  --sidebar-primary: #00a0e2;
+  --sidebar-primary-foreground: #0d277c;
+  --sidebar-accent: #0a2566;
+  --sidebar-accent-foreground: #f7f9f8;
+  --sidebar-border: #1a3a9c;
+  --sidebar-ring: #00a0e2;
+}
+
+@theme inline {
+  --font-sans: "Onest", "Onest Fallback", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Adding marquee animation for infinite scrolling logo stripe */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
